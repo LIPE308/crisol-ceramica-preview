@@ -1,0 +1,58 @@
+name: Deploy Crisol landing page
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify static landing page
+        run: |
+          test -s site/index.html
+          grep -q 'id="hero-title"' site/index.html
+          test ! -e site/CNAME
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - name: Install existing browser test dependencies
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+      - name: Test static site under Pages subpath
+        env:
+          CRISOL_URL: http://127.0.0.1:3113/crisol-ceramica-preview/
+        run: |
+          mkdir -p tmp/pages-qa
+          ln -s "$GITHUB_WORKSPACE/site" tmp/pages-qa/crisol-ceramica-preview
+          python3 -m http.server 3113 --bind 127.0.0.1 --directory tmp/pages-qa > /tmp/crisol-http.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid"' EXIT
+          for attempt in {1..30}; do
+            if curl --fail --silent "$CRISOL_URL" > /dev/null; then break; fi
+            sleep 1
+          done
+          npm run test:browser
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Verify public landing page in desktop and mobile browsers
+        env:
+          CRISOL_URL: https://lipe308.github.io/crisol-ceramica-preview/
+        run: npm run test:browser
