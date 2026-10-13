@@ -1,0 +1,112 @@
+{
+  "checks": [
+    "viewport 320: overflow, decoded photos and screenshots",
+    "viewport 390: overflow, decoded photos and screenshots",
+    "viewport 768: overflow, decoded photos and screenshots",
+    "viewport 1024: overflow, decoded photos and screenshots",
+    "viewport 1440: overflow, decoded photos and screenshots",
+    "semantic title, skip link and reduced motion download policy",
+    "text contrast: sampled editorial text meets WCAG AA",
+    "lightbox: keyboard opening, next, focus containment and Escape restoration",
+    "mobile menu: Escape restores focus and anchor closes",
+    "process: only one details stage remains open",
+    "map: no Google connection before click; correct iframe after local interception",
+    "fixed editorial light theme under dark scheme",
+    "no JS: navigation, photo links and native details remain usable",
+    "dynamic reduced motion reverts active GSAP transforms",
+    "mobile native reveals: no motion engine download and dynamic reduction cancels animation",
+    "saveData: skip animation engine and preserve content",
+    "mobile without IntersectionObserver: visible fallback and working gallery",
+    "blocked motion.js: visible content and gallery still function",
+    "runtime: no unexpected console errors, page errors or failing responses"
+  ],
+  "failures": [],
+  "pageErrors": [],
+  "consoleErrors": [],
+  "failedResponses": [],
+  "unexpectedRequests": [
+    {
+      "label": "reduced",
+      "url": "https://maps.google.com/maps?q=Escola%20de%20cer%C3%A2mica%20e%20ateli%C3%AA%20Crisol%2C%20Rua%20Bar%C3%A3o%20de%20Guara%C3%BAna%20374%2C%20Curitiba%20PR&output=embed"
+    }
+  ],
+  "metrics": {
+    "initial1440": {
+      "lcp": 1152,
+      "cls": 0.00013531969612027393
+    },
+    "reducedInteractionSession": {
+      "lcp": 1152,
+      "cls": 0.00013531969612027393
+    },
+    "motion": {
+      "lcp": 324,
+      "cls": 0.00013289128056278936
+    }
+  },
+  "contrast": [
+    {
+      "selector": "h1",
+      "foreground": "rgb(52, 40, 32)",
+      "background": "rgb(243, 238, 229)",
+      "ratio": 12.36,
+      "required": 3
+    },
+    {
+      "selector": ".hero-intro",
+      "foreground": "rgb(108, 90, 77)",
+      "background": "rgb(243, 238, 229)",
+      "ratio": 5.67,
+      "required": 4.5
+    },
+    {
+      "selector": ".eyebrow",
+      "foreground": "rgb(108, 90, 77)",
+      "background": "rgb(243, 238, 229)",
+      "ratio": 5.67,
+      "required": 4.5
+    },
+    {
+      "selector": ".hero .button",
+      "foreground": "rgb(255, 245, 233)",
+      "background": "rgb(139, 73, 50)",
+      "ratio": 6.29,
+      "required": 4.5
+    },
+    {
+      "selector": ".fine-print",
+      "foreground": "rgb(108, 90, 77)",
+      "background": "rgb(234, 225, 211)",
+      "ratio": 5.05,
+      "required": 4.5
+    },
+    {
+      "selector": ".map-placeholder small",
+      "foreground": "rgb(108, 90, 77)",
+      "background": "rgb(234, 225, 211)",
+      "ratio": 5.05,
+      "required": 4.5
+    },
+    {
+      "selector": ".preview-note",
+      "foreground": "rgb(108, 90, 77)",
+      "background": "rgb(243, 238, 229)",
+      "ratio": 5.67,
+      "required": 4.5
+    },
+    {
+      "selector": ".hero-art figcaption",
+      "foreground": "rgb(108, 90, 77)",
+      "background": "rgb(243, 238, 229)",
+      "ratio": 5.67,
+      "required": 4.5
+    },
+    {
+      "selector": ".experience p",
+      "foreground": "rgb(108, 90, 77)",
+      "background": "rgb(234, 225, 211)",
+      "ratio": 5.05,
+      "required": 4.5
+    }
+  ]
+}
