@@ -7,5 +7,7 @@
 - Não inclua nem publique dados operacionais de local-commercial, backups, arquivos de ambiente ou credenciais.
 - Use fontes em src/previews/crisol, build em scripts/crisol-preview.cjs e teste em tests/browser-crisol.cjs.
 - A hospedagem Sites já existe. Preserve hosting.json e seu project_id; não crie projeto duplicado.
-- Acesso público continua pendente de aprovação direta. Não contorne a rejeição de revisão automática por outro provedor ou token.
+- O operador escolheu manter a prévia privada por enquanto em 13/10/2026. Preserve essa escolha; não publicar para qualquer visitante sem um novo pedido explícito.
 - Retome pelo README e research/crisol-delivery.md; revise desktop/mobile, teclado, sem JS e movimento reduzido ao mudar comportamento.
+
+- O PC do operador tem 4 GB de RAM. Execute validações sequencialmente, feche abas de pesquisa desnecessárias e encerre servidores temporários após o QA. Evite múltiplos navegadores ou testes pesados concorrentes.

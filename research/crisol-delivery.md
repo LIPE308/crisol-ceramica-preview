@@ -40,3 +40,13 @@ URL real retornada: **https://crisol-ceramica-previa.korvy10.chatgpt.site**.
 A revisão automática de aprovação rejeitou `update_site_access(access_mode="public")`, alegando falta de autorização explícita e confiável para ampliar o acesso a qualquer visitante. O texto da missão estava em anexo, e essa autorização não foi aceita pela revisão. A ação não foi contornada por outro provedor, token ou endpoint. Falta aprovação direta do operador nesta conversa para tornar **esta URL específica** pública, sem login. Subdomínio `crisol.korvy.com.br` não foi configurado; DNS, VPS e domínio principal não foram alterados.
 
 Após aprovação, atualizar o acesso do mesmo Site para público, confirmar resposta da política e abrir esta URL sem sessão para revisar o deploy real em desktop e mobile. A versão salva e o pacote estão prontos; não criar outro Site nem inventar novo endereço.
+
+## Retomada e decisão final do operador
+
+O operador escolheu explicitamente **“Manter privada por enquanto”** em 13/10/2026. Essa escolha substitui o requisito inicial de link público: preservar o acesso privado existente e não pedir liberação novamente sem novo pedido. O histórico da rejeição acima permanece como registro, não como instrução para publicar.
+
+Repositório privado independente criado e sincronizado: **https://github.com/LIPE308/crisol-ceramica-preview**. Primeiro commit enviado e SHA remoto confirmado: `8fbe018eaa2cbb2cc77889c49ade5d455f2dad04`. Commit da missão na branch KORVY: `7500e80` (sem push institucional). Inclui fonte, assets/licenças, versão estática pronta, pesquisa, scripts, teste, capturas e relatórios. README e AGENTS próprios orientam a retomada.
+
+Na cópia independente, `npm ci --no-audit --no-fund` instalou 79 pacotes e `npm run build` passou com dependências locais. Não é necessário o repositório institucional para compilar a prévia. Nenhuma credencial foi salva ou enviada.
+
+O PC atual tem 4 GB de RAM, conforme o operador. Preferir uma validação por vez, não abrir navegadores/testes concorrentes, fechar abas de pesquisa ao concluir e encerrar servidores temporários. A preferência foi registrada no repositório de retomada.

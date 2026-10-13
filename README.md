@@ -4,7 +4,7 @@ Projeto independente preservado para continuar em outra máquina. Inclui fontes 
 
 ## Continuar o desenvolvimento
 
-Requer Node.js 24, 25 ou 26 e Git.
+Requer Node.js 24, 25 ou 26 e Git. A instalação independente por `npm ci` e o build foram executados com sucesso.
 
 ```sh
 git clone https://github.com/LIPE308/crisol-ceramica-preview.git
@@ -36,10 +36,14 @@ Leia `research/crisol-brand-audit.md` e `research/crisol-delivery.md`. Fotografi
 
 Capturas desktop/mobile e relatórios da rodada realizada estão em `review/`. 36 testes do repositório KORVY passaram, a suíte comercial passou e 19 verificações específicas da Crisol passaram. Lighthouse local: desempenho 93, acessibilidade 100, boas práticas 100. Estes valores não garantem desempenho de usuários reais.
 
-Deploy real: https://crisol-ceramica-previa.korvy10.chatgpt.site . Atualmente privado: a alteração para público foi bloqueada pela revisão automática e exige aprovação direta do operador. Nenhum DNS ou deploy da KORVY foi alterado.
+Deploy real: https://crisol-ceramica-previa.korvy10.chatgpt.site . Atualmente privado por escolha explícita do operador em 13/10/2026. Não alterar a visibilidade sem novo pedido. Nenhum DNS ou deploy da KORVY foi alterado.
 
 ## Próxima ação
 
-Autorizar diretamente nesta conversa o acesso público sem login ao Site existente. Depois confirmar a política e testar a URL sem autenticação em desktop/mobile. A versão salva já está pronta. Não publicar `local-commercial`, backups, segredos ou o CRM.
+Preservar o acesso privado escolhido pelo operador. O código já está pronto e pode continuar sendo refinado a partir das fontes; não há pendência de autorização pública na tarefa atual. Não publicar `local-commercial`, backups, segredos ou o CRM.
 
 Este repositório não contém dados operacionais, autenticação, credenciais de deploy ou o site institucional. Nenhuma mensagem foi enviada ao cliente. Para usar o plugin Sites em outra máquina, conectar a mesma conta e reutilizar o project_id persistido; obter uma credencial nova pela ferramenta, nunca salvar tokens no repositório.
+
+## Máquina com 4 GB de RAM
+
+Executar uma validação por vez. Fechar abas de pesquisa ao concluir cada consulta e encerrar servidores temporários depois do QA. Evitar Lighthouse e Playwright concorrentes. O build estático não exige manter um navegador aberto.
